@@ -2,6 +2,12 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { faUserSecret } from '@fortawesome/free-solid-svg-icons'
+import { faTrash } from '@fortawesome/free-solid-svg-icons'
+import { faPenToSquare } from '@fortawesome/free-regular-svg-icons'
 // // Import the functions you need from the SDKs you need
 // import { initializeApp } from "firebase/app";
 // // TODO: Add SDKs for Firebase products that you want to use
@@ -22,4 +28,9 @@ import store from './store'
 // // Initialize Firebase
 // initializeApp(firebaseConfig);
 
-createApp(App).use(store).use(router).mount('#app')
+
+/* add font awesome icon component */
+library.add(faTrash, faPenToSquare)
+library.add(faUserSecret)
+
+createApp(App).component('font-awesome-icon', FontAwesomeIcon).use(store).use(router).mount('#app')

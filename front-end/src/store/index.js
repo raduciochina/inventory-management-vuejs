@@ -15,6 +15,12 @@ export default createStore({
     },
     CLEAR_USER(state) {
       state.user = null;
+    },
+    SET_EDIT_INFO(state, info) {
+      state.editInfo = info;
+    },
+    CLEAR_EDIT_INFO(state) {
+      state.editInfo = '';
     }
   },
   actions: {
